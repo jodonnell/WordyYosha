@@ -9,15 +9,22 @@
 import Foundation
 
 class Dictionary {
-    func isWordIn(word: String) -> Bool {
+    let words: String[]
+
+    init() {
         let path = NSBundle.mainBundle().pathForResource("web2", ofType: "txt")
         var possibleContent = String.stringWithContentsOfFile(path, encoding: NSUTF8StringEncoding, error: nil)
         
         if let content = possibleContent {
-            var array = content.componentsSeparatedByString("\n")
-            return contains(array, PorterStemmer.stemFromString(word))
+            let array = content.componentsSeparatedByString("\n")
+            self.words = array
         }
-        
-        return false
+        else {
+            self.words = []
+        }
+    }
+
+    func isWord(word: String) -> Bool {
+        return contains(self.words, PorterStemmer.stemFromString(word))
     }
 }

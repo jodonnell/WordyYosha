@@ -24,8 +24,8 @@ class DictionaryTests: XCTestCase {
     func testExample() {
         // https://github.com/itfrombit/PorterStemmer
         let dictionary = Dictionary()
-        XCTAssertTrue(dictionary.isWordIn("power"))
-        XCTAssertTrue(dictionary.isWordIn("powers"))
-        XCTAssertFalse(dictionary.isWordIn("powerbutts"))
+        XCTAssertTrue(dictionary.isWord("power"))
+        XCTAssertTrue(dictionary.isWord("powers"))
+        XCTAssertFalse(dictionary.isWord("powerbutts"))
     }
 }
