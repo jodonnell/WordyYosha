@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1686C3DE1948D49200E7AFC7 /* web2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1686C3DD1948D49200E7AFC7 /* web2.txt */; };
-		1686C3DF1948D49200E7AFC7 /* web2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1686C3DD1948D49200E7AFC7 /* web2.txt */; };
 		1686C3F01948E26800E7AFC7 /* PorterStemmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1686C3EF1948E26800E7AFC7 /* PorterStemmer.m */; };
 		1686C3F11948E26800E7AFC7 /* PorterStemmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1686C3EF1948E26800E7AFC7 /* PorterStemmer.m */; };
 		16A3D5D719487FD8001A576E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5D619487FD8001A576E /* AppDelegate.swift */; };
@@ -32,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1686C3DD1948D49200E7AFC7 /* web2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = web2.txt; sourceTree = "<group>"; };
 		1686C3EC1948E26800E7AFC7 /* WordyYosha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordyYosha-Bridging-Header.h"; sourceTree = "<group>"; };
 		1686C3ED1948E26800E7AFC7 /* WordyYoshaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordyYoshaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		1686C3EE1948E26800E7AFC7 /* PorterStemmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PorterStemmer.h; sourceTree = "<group>"; };
@@ -107,7 +104,6 @@
 		16A3D5D419487FD8001A576E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1686C3DD1948D49200E7AFC7 /* web2.txt */,
 				16A3D5D519487FD8001A576E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -210,7 +206,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1686C3DE1948D49200E7AFC7 /* web2.txt in Resources */,
 				16A3D5E219487FD8001A576E /* Images.xcassets in Resources */,
 				16A3D5E019487FD8001A576E /* Main.storyboard in Resources */,
 			);
@@ -220,7 +215,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1686C3DF1948D49200E7AFC7 /* web2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
