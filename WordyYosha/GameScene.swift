@@ -13,7 +13,7 @@ class GameScene: SKScene {
         /* Setup your scene here */
         for x in (0..8) {
             for y in (0..8) {
-                self.addChild(LetterCreator.create(x, y: y))
+                self.addChild(LetterCreator.create(x: x, y: y))
             }
         }
 

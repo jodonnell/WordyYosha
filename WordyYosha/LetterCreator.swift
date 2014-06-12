@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class LetterCreator {
-    class func create(x: Int, y: Int) -> SKLabelNode {
+    class func create(#x: Int, y: Int) -> SKLabelNode {
         let myLabel = SKLabelNode(fontNamed:"Al Nile")
         myLabel.text = self.randomLetter()
         let fontSize = 37
