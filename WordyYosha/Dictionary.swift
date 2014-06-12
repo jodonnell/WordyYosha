@@ -7,24 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 class Dictionary {
-    let words: String[]
-
-    init() {
-        let path = NSBundle.mainBundle().pathForResource("web2", ofType: "txt")
-        var possibleContent = String.stringWithContentsOfFile(path, encoding: NSUTF8StringEncoding, error: nil)
-        
-        if let content = possibleContent {
-            let array = content.componentsSeparatedByString("\n")
-            self.words = array
-        }
-        else {
-            self.words = []
-        }
-    }
-
     func isWord(word: String) -> Bool {
-        return contains(self.words, PorterStemmer.stemFromString(word))
+
+        let checker = UITextChecker()
+        let currentLocale = NSLocale.currentLocale()
+        let currentLanguage = currentLocale!.objectForKey(NSLocaleLanguageCode) as String;
+        let searchRange = NSMakeRange(0, countElements(word))
+
+        let misspelledRange = checker.rangeOfMisspelledWordInString(word, range: searchRange, startingAt:0, wrap:false, language: currentLanguage)
+
+        if misspelledRange.location != 0 { return true }
+        return false
     }
 }
