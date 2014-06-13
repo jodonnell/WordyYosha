@@ -10,12 +10,12 @@ import Foundation
 import SpriteKit
 
 class Letter {
-    let sprite: SKLabelNode
+    let sprite: SKSpriteNode
     let letter: String
     let id: Int
-    init(sprite: SKLabelNode, id: Int) {
+    init(sprite: SKSpriteNode, id: Int) {
         self.sprite = sprite
-        self.letter = sprite.text
+        self.letter = sprite.children[0].text
         self.id = id
     }
 
@@ -24,7 +24,7 @@ class Letter {
     }
 
     func moveDown() {
-        let moveDownAction = SKAction.moveByX(0.0, y:-self.sprite.fontSize, duration:0.3)
+        let moveDownAction = SKAction.moveByX(0.0, y:-self.sprite.frame.size.height, duration:0.3)
         self.sprite.runAction(moveDownAction)
     }
 }

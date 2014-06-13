@@ -10,30 +10,38 @@ import Foundation
 import SpriteKit
 
 var id = 0
+let fontSize = 37
+let padding = 30
+
 class LetterCreator {
 
     class func create(#x: Int, y: Int) -> Letter {
-        let myLabel = SKLabelNode(fontNamed:"Al Nile")
-        myLabel.text = self.randomLetter()
-        let fontSize = 37
-        let padding = 30
-        myLabel.fontSize = CGFloat(fontSize)
-        myLabel.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
-        
-        return Letter(sprite: myLabel, id: self.newId())
+        let label = self.createLetterSprite(self.randomLetter())
+
+        let box = SKSpriteNode(color: SKColor.greenColor(), size: CGSizeMake(36, 39))
+        box.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
+        box.addChild(label)
+        return Letter(sprite: box, id: self.newId())
     }
 
     class func createWordString(#x: Int, y: Int, letter: Letter) -> Letter {
-        let myLabel = SKLabelNode(fontNamed:"Al Nile")
-        myLabel.text = letter.letter
-        let fontSize = 37
-        let padding = 30
-        myLabel.fontSize = CGFloat(fontSize)
-        myLabel.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
+        let label = self.createLetterSprite(letter.letter)
         
-        return Letter(sprite: myLabel, id: letter.id)
+        let box = SKSpriteNode(color: SKColor.yellowColor(), size: CGSizeMake(36, 39))
+        box.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
+        box.addChild(label)
+        return Letter(sprite: box, id: letter.id)
     }
 
+    class func createLetterSprite(letter: String) -> SKLabelNode {
+        let myLabel = SKLabelNode(fontNamed:"Al Nile")
+        myLabel.text = letter
+        myLabel.fontSize = CGFloat(fontSize)
+        myLabel.fontColor = SKColor.blackColor()
+        myLabel.position = CGPoint(x: 0, y: -15)
+        return myLabel
+    }
+    
     class func newId() -> Int {
         id++
         return id
