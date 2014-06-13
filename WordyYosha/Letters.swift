@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class Letters {
-    let letters: Letter[]
+    var letters: Letter[]
     init(letters: Letter[]) {
         self.letters = letters
     }
@@ -22,5 +22,17 @@ class Letters {
             }
         }
         return nil
+    }
+
+    func removeLettersIn(word: Letter[]) {
+        for letter in word {
+            for var i = countElements(self.letters) - 1; i >= 0; i-- {
+                let boardLetter = self.letters[i]
+                if letter == boardLetter {
+                    boardLetter.sprite.removeFromParent()
+                    self.letters.removeAtIndex(i)
+                }
+            }
+        }
     }
 }

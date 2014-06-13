@@ -54,7 +54,7 @@ class GameScene: SKScene {
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         let dictionary = Dictionary()
         if dictionary.isWord(self.wordString.word()) {
-            println("real word")
+            self.removeWord()
         }
         else {
             AudioServicesPlaySystemSound(UInt32(kSystemSoundID_Vibrate))
@@ -63,6 +63,10 @@ class GameScene: SKScene {
         self.clearWordString()
     }
 
+    func removeWord() {
+        self.letters.removeLettersIn(self.wordString.letters)
+    }
+    
     func clearWordString() {
         for letter in self.wordString.letters {
             letter.sprite.removeFromParent()
