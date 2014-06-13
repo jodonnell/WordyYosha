@@ -44,7 +44,19 @@ class Letters {
 
     func beginAnimating() {
         for letter in self.letters {
-            letter.moveDown()
+            if self.isAtBottom(letter) { continue }
+            // is there a letter underneath?
+            // if not move down
+            var point = letter.sprite.frame.origin
+            point.y -= letter.sprite.frame.size.height - 1
+            point.x += 10
+            if !self.findLetterAtLocation(point) {
+                letter.moveDown()
+            }
         }
+    }
+    func isAtBottom(letter: Letter) -> Bool {
+        println(letter.y())
+        return letter.y() == 10 // padding
     }
 }

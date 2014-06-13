@@ -24,8 +24,12 @@ class Letter {
     }
 
     func moveDown() {
-        let moveDownAction = SKAction.moveByX(0.0, y:-self.sprite.frame.size.height, duration:0.3)
+        let moveDownAction = SKAction.moveByX(0.0, y:-self.sprite.frame.size.height - 1, duration:0.3)
         self.sprite.runAction(moveDownAction)
+    }
+
+    func y() -> Int {
+        return Int(self.sprite.frame.origin.y)
     }
 }
 
