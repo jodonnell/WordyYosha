@@ -56,7 +56,6 @@ class Letters {
         }
     }
     func isAtBottom(letter: Letter) -> Bool {
-        println(letter.y())
         return letter.y() == 10 // padding
     }
 }
