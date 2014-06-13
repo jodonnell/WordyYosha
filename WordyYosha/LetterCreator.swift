@@ -21,6 +21,18 @@ class LetterCreator {
         return Letter(sprite: myLabel)
     }
 
+    class func createWordString(#x: Int, y: Int, letter: String) -> Letter {
+        let myLabel = SKLabelNode(fontNamed:"Al Nile")
+        myLabel.text = letter
+        let fontSize = 37
+        let padding = 30
+        myLabel.fontSize = CGFloat(fontSize)
+        myLabel.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
+        
+        return Letter(sprite: myLabel)
+    }
+
+    
     class func randomLetter() -> String {
         let cower = arc4random() % 100000
         if cower < 8167 { return "A" }

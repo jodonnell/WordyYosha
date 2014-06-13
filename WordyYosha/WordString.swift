@@ -9,5 +9,15 @@
 import Foundation
 
 class WordString {
+    var letters: Letter[] = []
 
+    func canAddLetter(letter: Letter) -> Bool {
+        return true
+    }
+
+    func createLetter(letter: Letter) -> Letter {
+        let newLetter = LetterCreator.createWordString(x: countElements(self.letters), y: 9, letter: letter.letter)
+        self.letters.append(newLetter)
+        return newLetter
+    }
 }
