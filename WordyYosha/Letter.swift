@@ -13,23 +13,31 @@ class Letter {
     let sprite: SKSpriteNode
     let letter: String
     let id: Int
-    init(sprite: SKSpriteNode, id: Int) {
+    var position: CGPoint?
+    
+    init(sprite: SKSpriteNode, id: Int, point: CGPoint?) {
         self.sprite = sprite
         self.letter = sprite.children[0].text
         self.id = id
+        self.position = point
     }
 
     func isPointIn(point: CGPoint) -> Bool {
         return CGRectContainsPoint(self.sprite.frame, point)
     }
 
-    func moveDown() {
-        let moveDownAction = SKAction.moveByX(0.0, y:-self.sprite.frame.size.height - 1, duration:0.3)
+    func moveDown(number: Float) {
+        let moveDownY = Float(-self.sprite.frame.size.height - 1) * number
+        let duration = 0.3 * number
+        let moveDownAction = SKAction.moveByX(0.0, y: CGFloat(moveDownY), duration: CGFloat(duration))
         self.sprite.runAction(moveDownAction)
     }
 
-    func y() -> Int {
-        return Int(self.sprite.frame.origin.y)
+    func isAtBottom() -> Bool {
+        if let position = self.position {
+            return position.y == 0
+        }
+        return false
     }
 }
 

@@ -43,19 +43,20 @@ class Letters {
     }
 
     func beginAnimating() {
-        for letter in self.letters {
-            if self.isAtBottom(letter) { continue }
-            // is there a letter underneath?
-            // if not move down
-            var point = letter.sprite.frame.origin
-            point.y -= letter.sprite.frame.size.height - 1
-            point.x += 10
-            if !self.findLetterAtLocation(point) {
-                letter.moveDown()
+        for x in (0..8) {
+            for y in (1..8) {
+                for letter in self.letters {
+                    if CGPointMake(CGFloat(x), CGFloat(y)) == letter.position {
+                        var point = letter.sprite.frame.origin
+                        point.y -= letter.sprite.frame.size.height - 1
+                        point.x += 10
+                        if !self.findLetterAtLocation(point) {
+                            letter.moveDown(1)
+                        }
+                        break
+                    }
+                }
             }
         }
-    }
-    func isAtBottom(letter: Letter) -> Bool {
-        return letter.y() == 10 // padding
     }
 }
