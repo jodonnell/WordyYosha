@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class LetterCreator {
-    class func create(#x: Int, y: Int) -> SKLabelNode {
+    class func create(#x: Int, y: Int) -> Letter {
         let myLabel = SKLabelNode(fontNamed:"Al Nile")
         myLabel.text = self.randomLetter()
         let fontSize = 37
@@ -18,7 +18,7 @@ class LetterCreator {
         myLabel.fontSize = CGFloat(fontSize)
         myLabel.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
         
-        return myLabel
+        return Letter(sprite: myLabel)
     }
 
     class func randomLetter() -> String {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		165E63651949D01800D91327 /* LetterCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E63641949D01800D91327 /* LetterCreator.swift */; };
+		165E6367194A69E900D91327 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6366194A69E900D91327 /* Letter.swift */; };
+		165E6369194A69F600D91327 /* Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6368194A69F600D91327 /* Letters.swift */; };
 		1686C3F01948E26800E7AFC7 /* PorterStemmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1686C3EF1948E26800E7AFC7 /* PorterStemmer.m */; };
 		1686C3F11948E26800E7AFC7 /* PorterStemmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1686C3EF1948E26800E7AFC7 /* PorterStemmer.m */; };
 		16A3D5D719487FD8001A576E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5D619487FD8001A576E /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		165E63641949D01800D91327 /* LetterCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCreator.swift; sourceTree = "<group>"; };
+		165E6366194A69E900D91327 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		165E6368194A69F600D91327 /* Letters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letters.swift; sourceTree = "<group>"; };
 		1686C3EC1948E26800E7AFC7 /* WordyYosha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordyYosha-Bridging-Header.h"; sourceTree = "<group>"; };
 		1686C3ED1948E26800E7AFC7 /* WordyYoshaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordyYoshaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		1686C3EE1948E26800E7AFC7 /* PorterStemmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PorterStemmer.h; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				16A3D5E119487FD8001A576E /* Images.xcassets */,
 				16A3D5D419487FD8001A576E /* Supporting Files */,
 				165E63641949D01800D91327 /* LetterCreator.swift */,
+				165E6366194A69E900D91327 /* Letter.swift */,
+				165E6368194A69F600D91327 /* Letters.swift */,
 			);
 			path = WordyYosha;
 			sourceTree = "<group>";
@@ -228,8 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165E6367194A69E900D91327 /* Letter.swift in Sources */,
 				16A3D5DB19487FD8001A576E /* GameScene.swift in Sources */,
 				16A3D5F81948817F001A576E /* Dictionary.swift in Sources */,
+				165E6369194A69F600D91327 /* Letters.swift in Sources */,
 				165E63651949D01800D91327 /* LetterCreator.swift in Sources */,
 				1686C3F01948E26800E7AFC7 /* PorterStemmer.m in Sources */,
 				16A3D5DD19487FD8001A576E /* GameViewController.swift in Sources */,
