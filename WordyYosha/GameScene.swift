@@ -37,22 +37,17 @@ class GameScene: SKScene {
                 let newLetter = wordString.createLetter(letter)
                 self.addChild(newLetter.sprite)
             }
-            // is letter valid?
-            //  is not in string
-            //  is consecutive to last letter
-            // add and 
-            println(letter.letter)
         }
-        else { println("nothing") }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.wordString = WordString()
         if let letter = self.getLetterFromTouch(touches) {
-            //wordString.addLetter(letter)
-            println(letter.letter)
+            if wordString.canAddLetter(letter) {
+                let newLetter = wordString.createLetter(letter)
+                self.addChild(newLetter.sprite)
+            }
         }
-        else { println("nothing") }
     }
 
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {

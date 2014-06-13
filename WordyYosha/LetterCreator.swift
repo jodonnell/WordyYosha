@@ -9,7 +9,9 @@
 import Foundation
 import SpriteKit
 
+var id = 0
 class LetterCreator {
+
     class func create(#x: Int, y: Int) -> Letter {
         let myLabel = SKLabelNode(fontNamed:"Al Nile")
         myLabel.text = self.randomLetter()
@@ -18,20 +20,24 @@ class LetterCreator {
         myLabel.fontSize = CGFloat(fontSize)
         myLabel.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
         
-        return Letter(sprite: myLabel)
+        return Letter(sprite: myLabel, id: self.newId())
     }
 
-    class func createWordString(#x: Int, y: Int, letter: String) -> Letter {
+    class func createWordString(#x: Int, y: Int, letter: Letter) -> Letter {
         let myLabel = SKLabelNode(fontNamed:"Al Nile")
-        myLabel.text = letter
+        myLabel.text = letter.letter
         let fontSize = 37
         let padding = 30
         myLabel.fontSize = CGFloat(fontSize)
         myLabel.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
         
-        return Letter(sprite: myLabel)
+        return Letter(sprite: myLabel, id: letter.id)
     }
 
+    class func newId() -> Int {
+        id++
+        return id
+    }
     
     class func randomLetter() -> String {
         let cower = arc4random() % 100000
