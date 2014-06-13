@@ -19,6 +19,7 @@
 		16A3D5F81948817F001A576E /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5F71948817F001A576E /* Dictionary.swift */; };
 		16A3D5F91948817F001A576E /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5F71948817F001A576E /* Dictionary.swift */; };
 		16A3D5FB194882C5001A576E /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5FA194882C5001A576E /* DictionaryTests.swift */; };
+		16AA6B6C194B565100F2DC7A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AA6B6B194B565100F2DC7A /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		16A3D5EC19487FD8001A576E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16A3D5F71948817F001A576E /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		16A3D5FA194882C5001A576E /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		16AA6B6B194B565100F2DC7A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16AA6B6C194B565100F2DC7A /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +73,7 @@
 		16A3D5C819487FD7001A576E = {
 			isa = PBXGroup;
 			children = (
+				16AA6B6B194B565100F2DC7A /* AudioToolbox.framework */,
 				16A3D5D319487FD8001A576E /* WordyYosha */,
 				16A3D5EA19487FD8001A576E /* WordyYoshaTests */,
 				16A3D5D219487FD8001A576E /* Products */,

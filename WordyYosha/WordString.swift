@@ -23,4 +23,16 @@ class WordString {
         self.letters.append(newLetter)
         return newLetter
     }
+
+    func isEmpty() -> Bool {
+        return self.letters.isEmpty
+    }
+
+    func word() -> String {
+        var word = ""
+        for letter in self.letters {
+            word += letter.letter
+        }
+        return word
+    }
 }

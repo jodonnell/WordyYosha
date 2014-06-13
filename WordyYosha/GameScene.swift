@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AudioToolbox
 
 class GameScene: SKScene {
     var letters: Letters
@@ -41,7 +42,7 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.wordString = WordString()
+        if !self.wordString.isEmpty() { return }
         if let letter = self.getLetterFromTouch(touches) {
             if wordString.canAddLetter(letter) {
                 let newLetter = wordString.createLetter(letter)
@@ -54,6 +55,15 @@ class GameScene: SKScene {
         for letter in self.wordString.letters {
             letter.sprite.removeFromParent()
         }
+
+        let dictionary = Dictionary()
+        if dictionary.isWord(self.wordString.word()) {
+            println("real word")
+        }
+        else {
+            AudioServicesPlaySystemSound(UInt32(kSystemSoundID_Vibrate))
+        }
+        self.wordString = WordString()
     }
     
     func getLetterFromTouch(touches: NSSet) -> Letter? {
