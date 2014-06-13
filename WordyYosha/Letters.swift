@@ -11,8 +11,14 @@ import SpriteKit
 
 class Letters {
     var letters: Letter[]
-    init(letters: Letter[]) {
-        self.letters = letters
+    init() {
+        self.letters = []
+        for x in (0..8) {
+            for y in (0..8) {
+                let letter = LetterCreator.create(x: x, y: y)
+                self.letters.append(letter)
+            }
+        }
     }
 
     func findLetterAtLocation(location: CGPoint) -> Letter? {

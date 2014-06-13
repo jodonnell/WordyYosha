@@ -14,14 +14,7 @@ class GameScene: SKScene {
     var wordString: WordString
 
     init(size: CGSize) {
-        var lettersArray: Letter[] = []
-        for x in (0..8) {
-            for y in (0..8) {
-                let letter = LetterCreator.create(x: x, y: y)
-                lettersArray.append(letter)
-            }
-        }
-        self.letters = Letters(letters: lettersArray)
+        self.letters = Letters()
         self.wordString = WordString()
         super.init(size: size)
     }
