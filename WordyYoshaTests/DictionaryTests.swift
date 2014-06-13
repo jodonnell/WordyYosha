@@ -25,5 +25,8 @@ class DictionaryTests: XCTestCase {
         XCTAssertFalse(dictionary.isWord("powerbutts"))
         XCTAssertFalse(dictionary.isWord("toxicing"))
         XCTAssertFalse(dictionary.isWord("TTB"))
+        XCTAssertFalse(dictionary.isWord("a"))
+        XCTAssertFalse(dictionary.isWord("at"))
+        XCTAssertTrue(dictionary.isWord("ate"))
     }
 }

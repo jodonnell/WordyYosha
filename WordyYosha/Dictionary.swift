@@ -12,6 +12,7 @@ import UIKit
 class Dictionary {
     func isWord(word: String) -> Bool {
         let lowercaseWord = word.lowercaseString
+        if countElements(lowercaseWord) < 3 { return false }
         let checker = UITextChecker()
         let currentLocale = NSLocale.currentLocale()
         let currentLanguage = currentLocale!.objectForKey(NSLocaleLanguageCode) as String
