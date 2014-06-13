@@ -24,7 +24,7 @@ class Letter {
     }
 
     func moveDown() {
-        let moveDownAction = SKAction.moveByX(0.0, y:-self.sprite.fontSize, duration:1.0)
+        let moveDownAction = SKAction.moveByX(0.0, y:-self.sprite.fontSize, duration:0.3)
         self.sprite.runAction(moveDownAction)
     }
 }
