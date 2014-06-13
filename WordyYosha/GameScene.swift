@@ -29,18 +29,29 @@ class GameScene: SKScene {
         }
     }
 
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        if let realLetter = self.getLetterFromTouch(touches) {
+            println(realLetter.letter)
+        }
+        else { println("nothing") }
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        if let realLetter = self.getLetterFromTouch(touches) {
+            println(realLetter.letter)
+        }
+        else { println("nothing") }
+    }
+
+    func getLetterFromTouch(touches: NSSet) -> Letter? {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             let letter = self.letters.findLetterAtLocation(location)
-            if let realLetter = letter {
-                println(realLetter.letter)
-            }
-            else { println("nothing") }
-            
+            return letter
         }
+        return nil
     }
-   
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
