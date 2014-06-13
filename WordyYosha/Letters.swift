@@ -35,4 +35,10 @@ class Letters {
             }
         }
     }
+
+    func beginAnimating() {
+        for letter in self.letters {
+            letter.moveDown()
+        }
+    }
 }

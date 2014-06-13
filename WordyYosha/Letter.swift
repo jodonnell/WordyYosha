@@ -22,6 +22,11 @@ class Letter {
     func isPointIn(point: CGPoint) -> Bool {
         return CGRectContainsPoint(self.sprite.frame, point)
     }
+
+    func moveDown() {
+        let moveDownAction = SKAction.moveByX(0.0, y:-self.sprite.fontSize, duration:1.0)
+        self.sprite.runAction(moveDownAction)
+    }
 }
 
 @infix func == (left: Letter, right: Letter) -> Bool {
