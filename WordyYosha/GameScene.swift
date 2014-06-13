@@ -10,6 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     var letters: Letters
+    let wordString: WordString
 
     init(size: CGSize) {
         var lettersArray: Letter[] = []
@@ -20,6 +21,7 @@ class GameScene: SKScene {
             }
         }
         self.letters = Letters(letters: lettersArray)
+        self.wordString = WordString()
         super.init(size: size)
     }
     
@@ -30,15 +32,20 @@ class GameScene: SKScene {
     }
 
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        if let realLetter = self.getLetterFromTouch(touches) {
-            println(realLetter.letter)
+        if let letter = self.getLetterFromTouch(touches) {
+            //wordString.addLetter(letter)
+            // is letter valid?
+            //  is not in string
+            //  is consecutive to last letter
+            // add and 
+            println(letter.letter)
         }
         else { println("nothing") }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        if let realLetter = self.getLetterFromTouch(touches) {
-            println(realLetter.letter)
+        if let letter = self.getLetterFromTouch(touches) {
+            println(letter.letter)
         }
         else { println("nothing") }
     }

@@ -10,8 +10,7 @@
 		165E63651949D01800D91327 /* LetterCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E63641949D01800D91327 /* LetterCreator.swift */; };
 		165E6367194A69E900D91327 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6366194A69E900D91327 /* Letter.swift */; };
 		165E6369194A69F600D91327 /* Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6368194A69F600D91327 /* Letters.swift */; };
-		1686C3F01948E26800E7AFC7 /* PorterStemmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1686C3EF1948E26800E7AFC7 /* PorterStemmer.m */; };
-		1686C3F11948E26800E7AFC7 /* PorterStemmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1686C3EF1948E26800E7AFC7 /* PorterStemmer.m */; };
+		165E636D194A9D7200D91327 /* WordString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E636C194A9D7200D91327 /* WordString.swift */; };
 		16A3D5D719487FD8001A576E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5D619487FD8001A576E /* AppDelegate.swift */; };
 		16A3D5DB19487FD8001A576E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5DA19487FD8001A576E /* GameScene.swift */; };
 		16A3D5DD19487FD8001A576E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5DC19487FD8001A576E /* GameViewController.swift */; };
@@ -36,10 +35,7 @@
 		165E63641949D01800D91327 /* LetterCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCreator.swift; sourceTree = "<group>"; };
 		165E6366194A69E900D91327 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		165E6368194A69F600D91327 /* Letters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letters.swift; sourceTree = "<group>"; };
-		1686C3EC1948E26800E7AFC7 /* WordyYosha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordyYosha-Bridging-Header.h"; sourceTree = "<group>"; };
-		1686C3ED1948E26800E7AFC7 /* WordyYoshaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordyYoshaTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		1686C3EE1948E26800E7AFC7 /* PorterStemmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PorterStemmer.h; sourceTree = "<group>"; };
-		1686C3EF1948E26800E7AFC7 /* PorterStemmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PorterStemmer.m; sourceTree = "<group>"; };
+		165E636C194A9D7200D91327 /* WordString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordString.swift; sourceTree = "<group>"; };
 		16A3D5D119487FD8001A576E /* WordyYosha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordyYosha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A3D5D519487FD8001A576E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16A3D5D619487FD8001A576E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,13 +70,9 @@
 		16A3D5C819487FD7001A576E = {
 			isa = PBXGroup;
 			children = (
-				1686C3EE1948E26800E7AFC7 /* PorterStemmer.h */,
-				1686C3EF1948E26800E7AFC7 /* PorterStemmer.m */,
 				16A3D5D319487FD8001A576E /* WordyYosha */,
 				16A3D5EA19487FD8001A576E /* WordyYoshaTests */,
 				16A3D5D219487FD8001A576E /* Products */,
-				1686C3EC1948E26800E7AFC7 /* WordyYosha-Bridging-Header.h */,
-				1686C3ED1948E26800E7AFC7 /* WordyYoshaTests-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +98,7 @@
 				165E63641949D01800D91327 /* LetterCreator.swift */,
 				165E6366194A69E900D91327 /* Letter.swift */,
 				165E6368194A69F600D91327 /* Letters.swift */,
+				165E636C194A9D7200D91327 /* WordString.swift */,
 			);
 			path = WordyYosha;
 			sourceTree = "<group>";
@@ -239,8 +232,8 @@
 				16A3D5F81948817F001A576E /* Dictionary.swift in Sources */,
 				165E6369194A69F600D91327 /* Letters.swift in Sources */,
 				165E63651949D01800D91327 /* LetterCreator.swift in Sources */,
-				1686C3F01948E26800E7AFC7 /* PorterStemmer.m in Sources */,
 				16A3D5DD19487FD8001A576E /* GameViewController.swift in Sources */,
+				165E636D194A9D7200D91327 /* WordString.swift in Sources */,
 				16A3D5D719487FD8001A576E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,7 +244,6 @@
 			files = (
 				16A3D5F91948817F001A576E /* Dictionary.swift in Sources */,
 				16A3D5FB194882C5001A576E /* DictionaryTests.swift in Sources */,
-				1686C3F11948E26800E7AFC7 /* PorterStemmer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +357,6 @@
 				INFOPLIST_FILE = WordyYosha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WordyYosha-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -379,7 +370,6 @@
 				INFOPLIST_FILE = WordyYosha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WordyYosha-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -400,7 +390,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WordyYoshaTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -419,7 +408,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WordyYoshaTests-Bridging-Header.h";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
