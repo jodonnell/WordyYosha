@@ -26,18 +26,15 @@ class Letter {
         return CGRectContainsPoint(self.sprite.frame, point)
     }
 
-    func moveDown(number: Float) {
-        let moveDownY = Float(-self.sprite.frame.size.height - 1) * number
-        let duration = 0.3 * number
+    func moveDown(number: Int) {
+        if number == 0 { return }
+        self.position = CGPointMake(self.position!.x, self.position!.y - CGFloat(number))
+
+
+        let moveDownY = Float(-self.sprite.frame.size.height - 1) * Float(number)
+        let duration = 0.3 * Float(number)
         let moveDownAction = SKAction.moveByX(0.0, y: CGFloat(moveDownY), duration: CGFloat(duration))
         self.sprite.runAction(moveDownAction)
-    }
-
-    func isAtBottom() -> Bool {
-        if let position = self.position {
-            return position.y == 0
-        }
-        return false
     }
 }
 

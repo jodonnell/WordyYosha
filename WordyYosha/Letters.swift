@@ -43,20 +43,47 @@ class Letters {
     }
 
     func beginAnimating() {
-        for x in (0..8) {
-            for y in (1..8) {
+        for y in (1..8) {
+            for x in (0..8) {
                 for letter in self.letters {
                     if CGPointMake(CGFloat(x), CGFloat(y)) == letter.position {
-                        var point = letter.sprite.frame.origin
-                        point.y -= letter.sprite.frame.size.height - 1
-                        point.x += 10
-                        if !self.findLetterAtLocation(point) {
-                            letter.moveDown(1)
-                        }
+                        let moveDown = self.findLowestHole(letter)
+
+                        println(moveDown)
+                        letter.moveDown(moveDown)
                         break
                     }
                 }
             }
         }
+    }
+
+    func findLowestHole(letter: Letter) -> Int {
+        let point = CGPointMake(letter.position!.x, letter.position!.y - CGFloat(1))
+        var found = false
+        for letter in self.letters {
+            if CGPointEqualToPoint(point, letter.position!) {
+                found = true
+            }
+        }
+
+        // if !found {
+        //     let point = CGPointMake(letter.position!.x, letter.position!.y - CGFloat(2))
+        //     var found = false
+        //     for letter in self.letters {
+        //         if CGPointEqualToPoint(point, letter.position!) {
+        //             found = true
+        //         }
+        //     }
+        //     if !found {
+        //         return 2
+        //     }
+        //     return 1
+        // }
+        
+        if !found {
+            return 1
+        }
+        return 0
     }
 }
