@@ -74,7 +74,6 @@ class Letters {
     func createNewLettersInRow(numLetters: Int, row: Int) {
         let startCreateY = numBoardRows - numLetters
         for y in startCreateY..numBoardRows {
-            println("x: \(row) y: \(y)")
             let letter = LetterCreator.create(x: row, y: y)
             self.letters.append(letter)
         }
