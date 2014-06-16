@@ -47,8 +47,9 @@ class Letters {
             for x in (0..8) {
                 for letter in self.letters {
                     if Point(x: x, y: y) == letter.position {
-                        let moveDown = self.findLowestHole(letter)
-                        letter.moveDown(moveDown)
+                        println(letter.position)
+                        let moveDownRows = self.findLowestHole(letter)
+                        letter.moveDown(moveDownRows)
                         break
                     }
                 }

@@ -8,9 +8,13 @@
 
 import Foundation
 
-struct Point {
+struct Point: Printable {
     var x = 0
     var y = 0
+
+    var description: String {
+        return "\(self.x) \(self.y)"
+    }
 }
 
 @infix func == (left: Point, right: Point) -> Bool {
