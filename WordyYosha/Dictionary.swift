@@ -11,16 +11,21 @@ import UIKit
 
 class Dictionary {
     func isWord(word: String) -> Bool {
+        if countElements(word) < 3 { return false }
+
         let lowercaseWord = word.lowercaseString
-        if countElements(lowercaseWord) < 3 { return false }
-        let checker = UITextChecker()
-        let currentLocale = NSLocale.currentLocale()
-        let currentLanguage = currentLocale!.objectForKey(NSLocaleLanguageCode) as String
         let searchRange = NSMakeRange(0, countElements(lowercaseWord))
+        let misspelledRange = UITextChecker().rangeOfMisspelledWordInString(lowercaseWord, range: searchRange, startingAt:0, wrap:false, language: self.currentLanguage())
 
-        let misspelledRange = checker.rangeOfMisspelledWordInString(lowercaseWord, range: searchRange, startingAt:0, wrap:false, language: currentLanguage)
-
-        if misspelledRange.location == NSNotFound { return true }
-        return false
+        return misspelledRange.location == NSNotFound
     }
+
+    func currentLocale() -> NSLocale {
+        return NSLocale.currentLocale()        
+    }
+
+    func currentLanguage() -> String {
+        return self.currentLocale().objectForKey(NSLocaleLanguageCode) as String
+    }
+    
 }
