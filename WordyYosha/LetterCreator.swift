@@ -15,13 +15,13 @@ let padding = 30
 
 class LetterCreator {
 
-    class func create(#x: Int, y: Int) -> Letter {
+    class func create(#x: Int, y: Int) -> BoardLetter {
         let label = self.createLetterSprite(self.randomLetter())
 
         let box = SKSpriteNode(color: SKColor.greenColor(), size: CGSizeMake(36, 39))
         box.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
         box.addChild(label)
-        return Letter(sprite: box, id: self.newId(), point: CGPointMake(CGFloat(x), CGFloat(y)))
+        return BoardLetter(sprite: box, id: self.newId(), point: CGPointMake(CGFloat(x), CGFloat(y)))
     }
 
     class func createWordString(#x: Int, y: Int, letter: Letter) -> Letter {
@@ -30,7 +30,7 @@ class LetterCreator {
         let box = SKSpriteNode(color: SKColor.yellowColor(), size: CGSizeMake(36, 39))
         box.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
         box.addChild(label)
-        return Letter(sprite: box, id: letter.id, point: nil)
+        return Letter(sprite: box, id: letter.id)
     }
 
     class func createLetterSprite(letter: String) -> SKLabelNode {

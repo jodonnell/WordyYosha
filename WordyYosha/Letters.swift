@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class Letters {
-    var letters: Letter[]
+    var letters: BoardLetter[]
     init() {
         self.letters = []
         for x in (0..8) {
@@ -58,29 +58,15 @@ class Letters {
         }
     }
 
-    func findLowestHole(letter: Letter) -> Int {
-        let point = CGPointMake(letter.position!.x, letter.position!.y - CGFloat(1))
+    func findLowestHole(letter: BoardLetter) -> Int {
+        let point = CGPointMake(letter.position.x, letter.position.y - CGFloat(1))
         var found = false
         for letter in self.letters {
-            if CGPointEqualToPoint(point, letter.position!) {
+            if CGPointEqualToPoint(point, letter.position) {
                 found = true
             }
         }
 
-        // if !found {
-        //     let point = CGPointMake(letter.position!.x, letter.position!.y - CGFloat(2))
-        //     var found = false
-        //     for letter in self.letters {
-        //         if CGPointEqualToPoint(point, letter.position!) {
-        //             found = true
-        //         }
-        //     }
-        //     if !found {
-        //         return 2
-        //     }
-        //     return 1
-        // }
-        
         if !found {
             return 1
         }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		162BA47B194E6FD400632B9C /* BoardLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BA47A194E6FD400632B9C /* BoardLetter.swift */; };
+		162BA47C194E6FD400632B9C /* BoardLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BA47A194E6FD400632B9C /* BoardLetter.swift */; };
 		165E63651949D01800D91327 /* LetterCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E63641949D01800D91327 /* LetterCreator.swift */; };
 		165E6367194A69E900D91327 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6366194A69E900D91327 /* Letter.swift */; };
 		165E6369194A69F600D91327 /* Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6368194A69F600D91327 /* Letters.swift */; };
@@ -33,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		162BA47A194E6FD400632B9C /* BoardLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLetter.swift; sourceTree = "<group>"; };
 		165E63641949D01800D91327 /* LetterCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCreator.swift; sourceTree = "<group>"; };
 		165E6366194A69E900D91327 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		165E6368194A69F600D91327 /* Letters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letters.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 				165E6366194A69E900D91327 /* Letter.swift */,
 				165E6368194A69F600D91327 /* Letters.swift */,
 				165E636C194A9D7200D91327 /* WordString.swift */,
+				162BA47A194E6FD400632B9C /* BoardLetter.swift */,
 			);
 			path = WordyYosha;
 			sourceTree = "<group>";
@@ -238,6 +242,7 @@
 				165E63651949D01800D91327 /* LetterCreator.swift in Sources */,
 				16A3D5DD19487FD8001A576E /* GameViewController.swift in Sources */,
 				165E636D194A9D7200D91327 /* WordString.swift in Sources */,
+				162BA47B194E6FD400632B9C /* BoardLetter.swift in Sources */,
 				16A3D5D719487FD8001A576E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A3D5F91948817F001A576E /* Dictionary.swift in Sources */,
+				162BA47C194E6FD400632B9C /* BoardLetter.swift in Sources */,
 				16A3D5FB194882C5001A576E /* DictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
