@@ -47,9 +47,7 @@ class Letters {
             for x in (0..8) {
                 for letter in self.letters {
                     if Point(x: x, y: y) == letter.position {
-                        println(letter.position)
-                        let moveDownRows = self.findLowestHole(letter)
-                        letter.moveDown(moveDownRows)
+                        letter.moveDown(self.moveDownRows(letter))
                         break
                     }
                 }
@@ -57,17 +55,18 @@ class Letters {
         }
     }
 
-    func findLowestHole(letter: BoardLetter) -> Int {
-        let point = Point(x: letter.position.x, y: letter.position.y - 1)
-        var found = false
-        for letter in self.letters {
-            if point == letter.position {
-                found = true
+    func moveDownRows(letter: BoardLetter) -> Int {
+        for y in (0..letter.position.y) {
+            var found = false
+            let point = Point(x: letter.position.x, y: y)
+            for letter in self.letters {
+                if point == letter.position {
+                    found = true
+                }
             }
-        }
-
-        if !found {
-            return 1
+            if !found {
+                return abs(y - letter.position.y)
+            }
         }
         return 0
     }
