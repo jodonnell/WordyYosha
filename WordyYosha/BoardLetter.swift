@@ -15,6 +15,9 @@ class BoardLetter: Letter {
     init(sprite: SKSpriteNode, id: Int, point: Point) {
         self.position = point
         super.init(sprite: sprite, id: id)
+        if self.position.y > 7 {
+            self.sprite.hidden = true
+        }
     }
 
     func isPointIn(point: CGPoint) -> Bool {
@@ -28,6 +31,10 @@ class BoardLetter: Letter {
         if number == 0 { return }
         self.position = Point(x: self.position.x, y: self.position.y - number)
 
+        if (self.position.y < 8) {
+            self.sprite.hidden = false
+        }
+        
         let moveDownY = Float(-self.sprite.frame.size.height - 1) * Float(number)
         let duration = 0.3 * Float(number)
         let moveDownAction = SKAction.moveByX(0.0, y: CGFloat(moveDownY), duration: NSTimeInterval(duration))

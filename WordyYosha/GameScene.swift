@@ -47,7 +47,7 @@ class GameScene: SKScene {
         let dictionary = Dictionary()
         if dictionary.isWord(self.wordString.word()) {
             self.removeWord()
-            self.beginAnimating()
+            self.letters.fall()
         }
         else {
             AudioServicesPlaySystemSound(UInt32(kSystemSoundID_Vibrate))
@@ -60,10 +60,6 @@ class GameScene: SKScene {
         self.letters.removeLettersIn(self.wordString.letters)
     }
 
-    func beginAnimating() {
-        self.letters.beginAnimating()
-    }
-    
     func clearWordString() {
         for letter in self.wordString.letters {
             letter.sprite.removeFromParent()

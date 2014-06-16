@@ -27,7 +27,6 @@ class GameViewController: UIViewController {
         
         let scene = GameScene(size: skView.bounds.size)
         //skView.frame = UIScreen.mainScreen().bounds
-        println(skView.frame)
         skView.presentScene(scene)
 
     }

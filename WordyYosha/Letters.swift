@@ -11,10 +11,13 @@ import SpriteKit
 
 class Letters {
     var letters: BoardLetter[]
+    let numBoardRows = 16
+    let numBoardVisibleRows = 8
+    let numBoardColumns = 8
     init() {
         self.letters = []
-        for x in (0..8) {
-            for y in (0..8) {
+        for x in (0..numBoardColumns) {
+            for y in (0..numBoardRows) {
                 let letter = LetterCreator.create(x: x, y: y)
                 self.letters.append(letter)
             }
@@ -42,9 +45,9 @@ class Letters {
         }
     }
 
-    func beginAnimating() {
-        for y in (1..8) {
-            for x in (0..8) {
+    func fall() {
+        for y in (1..numBoardRows) {
+            for x in (0..numBoardColumns) {
                 for letter in self.letters {
                     if Point(x: x, y: y) == letter.position {
                         letter.moveDown(self.moveDownRows(letter))
@@ -53,21 +56,34 @@ class Letters {
                 }
             }
         }
+        self.createNewLetters()
     }
 
+    func createNewLetters() {
+        for x in (0..numBoardColumns) {
+            for y in (0..numBoardVisibleRows) {
+                
+            }
+        }
+        
+    }
+    
     func moveDownRows(letter: BoardLetter) -> Int {
         for y in (0..letter.position.y) {
-            var found = false
             let point = Point(x: letter.position.x, y: y)
-            for letter in self.letters {
-                if point == letter.position {
-                    found = true
-                }
-            }
-            if !found {
+            if !self.findLetter(point) {
                 return abs(y - letter.position.y)
             }
         }
         return 0
+    }
+
+    func findLetter(point: Point) -> Letter? {
+        for letter in self.letters {
+            if point == letter.position {
+                return letter
+            }
+        }
+        return nil
     }
 }
