@@ -61,11 +61,23 @@ class Letters {
 
     func createNewLetters() {
         for x in (0..numBoardColumns) {
-            for y in (0..numBoardVisibleRows) {
-                
+            for y in (0..numBoardRows) {
+                if !self.findLetter(Point(x: x, y: y)) {
+                    self.createNewLettersInRow(numBoardRows - y, row: x)
+                    break
+                }
             }
         }
         
+    }
+
+    func createNewLettersInRow(numLetters: Int, row: Int) {
+        let startCreateY = numBoardRows - numLetters
+        for y in startCreateY..numBoardRows {
+            println("x: \(row) y: \(y)")
+            let letter = LetterCreator.create(x: row, y: y)
+            self.letters.append(letter)
+        }
     }
     
     func moveDownRows(letter: BoardLetter) -> Int {
