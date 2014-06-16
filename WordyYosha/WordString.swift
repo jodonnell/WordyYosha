@@ -19,7 +19,7 @@ class WordString {
     }
 
     func createLetter(letter: Letter) -> Letter {
-        let newLetter = LetterCreator.createWordString(x: countElements(self.letters), y: 9, letter: letter)
+        let newLetter = LetterCreator.createWordString(Point(x: countElements(self.letters), y: 9), letter: letter)
         self.letters.append(newLetter)
         return newLetter
     }

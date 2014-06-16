@@ -18,7 +18,7 @@ class Letters {
         self.letters = []
         for x in (0..numBoardColumns) {
             for y in (0..numBoardRows) {
-                let letter = LetterCreator.create(x: x, y: y)
+                let letter = LetterCreator.create(Point(x: x, y: y))
                 self.letters.append(letter)
             }
         }
@@ -74,7 +74,7 @@ class Letters {
     func createNewLettersInRow(numLetters: Int, row: Int) {
         let startCreateY = numBoardRows - numLetters
         for y in startCreateY..numBoardRows {
-            let letter = LetterCreator.create(x: row, y: y)
+            let letter = LetterCreator.create(Point(x: row, y: y))
             self.letters.append(letter)
         }
     }
