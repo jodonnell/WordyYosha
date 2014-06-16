@@ -26,6 +26,15 @@ class GameScene: SKScene {
     }
 
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        self.checkForNewLetter(touches)
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        if !self.wordString.isEmpty() { return }
+        self.checkForNewLetter(touches)
+    }
+
+    func checkForNewLetter(touches: NSSet) {
         if let letter = self.getLetterFromTouch(touches) {
             if wordString.canAddLetter(letter) {
                 let newLetter = wordString.createLetter(letter)
@@ -34,16 +43,6 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        if !self.wordString.isEmpty() { return }
-        if let letter = self.getLetterFromTouch(touches) {
-            if wordString.canAddLetter(letter) {
-                let newLetter = wordString.createLetter(letter)
-                self.addChild(newLetter.sprite)
-            }
-        }
-    }
-
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         let dictionary = Dictionary()
         if dictionary.isWord(self.wordString.word()) {
