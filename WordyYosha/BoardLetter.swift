@@ -10,9 +10,9 @@ import Foundation
 import SpriteKit
 
 class BoardLetter: Letter {
-    var position: CGPoint
+    var position: Point
 
-    init(sprite: SKSpriteNode, id: Int, point: CGPoint) {
+    init(sprite: SKSpriteNode, id: Int, point: Point) {
         self.position = point
         super.init(sprite: sprite, id: id)
     }
@@ -23,7 +23,7 @@ class BoardLetter: Letter {
 
     func moveDown(number: Int) {
         if number == 0 { return }
-        self.position = CGPointMake(self.position.x, self.position.y - CGFloat(number))
+        self.position = Point(x: self.position.x, y: self.position.y - number)
 
         let moveDownY = Float(-self.sprite.frame.size.height - 1) * Float(number)
         let duration = 0.3 * Float(number)

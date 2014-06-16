@@ -21,7 +21,7 @@ class LetterCreator {
         let box = SKSpriteNode(color: SKColor.greenColor(), size: CGSizeMake(36, 39))
         box.position = CGPoint(x: x * fontSize + padding, y: y * (fontSize + 3) + padding)
         box.addChild(label)
-        return BoardLetter(sprite: box, id: self.newId(), point: CGPointMake(CGFloat(x), CGFloat(y)))
+        return BoardLetter(sprite: box, id: self.newId(), point: Point(x: x, y: y))
     }
 
     class func createWordString(#x: Int, y: Int, letter: Letter) -> Letter {

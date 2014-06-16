@@ -46,10 +46,8 @@ class Letters {
         for y in (1..8) {
             for x in (0..8) {
                 for letter in self.letters {
-                    if CGPointMake(CGFloat(x), CGFloat(y)) == letter.position {
+                    if Point(x: x, y: y) == letter.position {
                         let moveDown = self.findLowestHole(letter)
-
-                        println(moveDown)
                         letter.moveDown(moveDown)
                         break
                     }
@@ -59,10 +57,10 @@ class Letters {
     }
 
     func findLowestHole(letter: BoardLetter) -> Int {
-        let point = CGPointMake(letter.position.x, letter.position.y - CGFloat(1))
+        let point = Point(x: letter.position.x, y: letter.position.y - 1)
         var found = false
         for letter in self.letters {
-            if CGPointEqualToPoint(point, letter.position) {
+            if point == letter.position {
                 found = true
             }
         }
