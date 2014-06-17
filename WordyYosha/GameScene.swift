@@ -12,10 +12,28 @@ import AudioToolbox
 class GameScene: SKScene {
     var letters: Letters
     var wordString: WordString
-
+    let playerOneScore: SKLabelNode
+    let playerTwoScore: SKLabelNode
+    var player: Int
+    
     init(size: CGSize) {
         self.letters = Letters()
         self.wordString = WordString()
+
+        self.playerOneScore = SKLabelNode(fontNamed:"Al Nile")
+        self.playerOneScore.text = "0"
+        self.playerOneScore.fontSize = 50
+        self.playerOneScore.fontColor = SKColor.whiteColor()
+        self.playerOneScore.position = CGPoint(x: 50, y: 500)
+
+        self.playerTwoScore = SKLabelNode(fontNamed:"Al Nile")
+        self.playerTwoScore.text = "0"
+        self.playerTwoScore.fontSize = 50
+        self.playerTwoScore.fontColor = SKColor.whiteColor()
+        self.playerTwoScore.position = CGPoint(x: 260, y: 500)
+
+        self.player = 1
+        
         super.init(size: size)
     }
     
@@ -23,6 +41,9 @@ class GameScene: SKScene {
         for letter in self.letters.letters {
             self.addChild(letter.sprite)
         }
+
+        self.addChild(self.playerOneScore)
+        self.addChild(self.playerTwoScore)
     }
 
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
@@ -46,6 +67,14 @@ class GameScene: SKScene {
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         let dictionary = Dictionary()
         if dictionary.isWord(self.wordString.word()) {
+            if player == 1 {
+                self.playerOneScore.text = String(self.playerOneScore.text.toInt()! + self.wordString.points())
+                player = 2
+            }
+            else {
+                self.playerTwoScore.text = String(self.playerTwoScore.text.toInt()! + self.wordString.points())
+                player = 1
+            }
             self.removeWord()
             self.letters.fall()
             self.addNewLetters()

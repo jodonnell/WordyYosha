@@ -40,5 +40,4 @@ class BoardLetter: Letter {
         let moveDownAction = SKAction.moveByX(0.0, y: CGFloat(moveDownY), duration: NSTimeInterval(duration))
         self.sprite.runAction(moveDownAction)
     }
-
 }

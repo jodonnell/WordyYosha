@@ -35,4 +35,12 @@ class WordString {
         }
         return word
     }
+
+    func points() -> Int {
+        var sum = 0
+        for letter in self.letters {
+            sum += letter.points()
+        }
+        return sum
+    }
 }

@@ -19,29 +19,40 @@ let padding = 30
 class LetterCreator {
 
     class func create(point: Point) -> BoardLetter {
-        let label = self.createLetterSprite(self.randomLetter(), fontSize: 20)
+        let label = self.createLetterSprite(self.randomLetter(), fontSize: 20, point: CGPoint(x: 0, y: -15))
+        let box = self.createBox(SKColor.greenColor(), point: point, label: label)
+        let boardLetter = BoardLetter(sprite: box, id: self.newId(), point: point)
 
-        let box = SKSpriteNode(color: SKColor.greenColor(), size: self.boxSize())
-        box.position = CGPoint(x: point.x * boxWidthWithPadding + padding, y: point.y * (boxWidthWithPadding + 3) + padding)
-        box.addChild(label)
+        let myLabel = self.createLetterSprite(String(boardLetter.points()), fontSize: 12, point: CGPoint(x: 10, y: 8))
+        box.addChild(myLabel)
+        return boardLetter
+    }
+
+    class func createWithLetter(point: Point, letter: String) -> BoardLetter {
+        let label = self.createLetterSprite(letter, fontSize: 20, point: CGPoint(x: 0, y: -15))
+        let box = self.createBox(SKColor.greenColor(), point: point, label: label)
         return BoardLetter(sprite: box, id: self.newId(), point: point)
     }
 
     class func createWordString(point: Point, letter: Letter) -> Letter {
-        let label = self.createLetterSprite(letter.letter, fontSize: 37)
-        
-        let box = SKSpriteNode(color: SKColor.yellowColor(), size: self.boxSize())
-        box.position = CGPoint(x: point.x * boxWidthWithPadding + padding, y: point.y * (boxWidthWithPadding + 3) + padding)
-        box.addChild(label)
+        let label = self.createLetterSprite(letter.letter, fontSize: 37, point: CGPoint(x: 0, y: -15))
+        let box = self.createBox(SKColor.yellowColor(), point: point, label: label)
         return Letter(sprite: box, id: letter.id)
     }
 
-    class func createLetterSprite(letter: String, fontSize: Int) -> SKLabelNode {
+    class func createBox(color: SKColor, point: Point, label: SKLabelNode) -> SKSpriteNode {
+        let box = SKSpriteNode(color: color, size: self.boxSize())
+        box.position = CGPoint(x: point.x * boxWidthWithPadding + padding, y: point.y * (boxWidthWithPadding + 3) + padding)
+        box.addChild(label)
+        return box
+    }
+    
+    class func createLetterSprite(letter: String, fontSize: Int, point: CGPoint) -> SKLabelNode {
         let myLabel = SKLabelNode(fontNamed:"Al Nile")
         myLabel.text = letter
         myLabel.fontSize = CGFloat(fontSize)
         myLabel.fontColor = SKColor.blackColor()
-        myLabel.position = CGPoint(x: 0, y: -15)
+        myLabel.position = point
         return myLabel
     }
 

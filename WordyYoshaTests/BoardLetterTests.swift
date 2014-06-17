@@ -19,7 +19,7 @@ class BoardLetterTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
+    func testIsPointIn() {
         let boardLetter = LetterCreator.create(Point(x: 0, y: 0))
 
         let validX = 22.0
@@ -34,6 +34,10 @@ class BoardLetterTests: XCTestCase {
         XCTAssertFalse(boardLetter.isPointIn(CGPointMake(validXRight + 1, validYBottom )))
         XCTAssertFalse(boardLetter.isPointIn(CGPointMake(validXRight , validYBottom + 1)))
         XCTAssert(boardLetter.isPointIn(CGPointMake(validXRight, validYBottom)))
+    }
 
+    func testScoreForLetter() {
+        let boardLetter = LetterCreator.createWithLetter(Point(x: 0, y: 0), letter: "B")
+        XCTAssertEqual(boardLetter.points(), 7)
     }
 }
