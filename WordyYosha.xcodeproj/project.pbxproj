@@ -11,7 +11,14 @@
 		162BA47C194E6FD400632B9C /* BoardLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BA47A194E6FD400632B9C /* BoardLetter.swift */; };
 		162BA47E194E745500632B9C /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BA47D194E745500632B9C /* Point.swift */; };
 		162BA47F194E745500632B9C /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BA47D194E745500632B9C /* Point.swift */; };
-		165E63651949D01800D91327 /* LetterCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E63641949D01800D91327 /* LetterCreator.swift */; };
+		162BA480194FA3E200632B9C /* LetterCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E63641949D01800D91327 /* LetterCreator.swift */; };
+		162BA481194FA3E300632B9C /* LetterCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E63641949D01800D91327 /* LetterCreator.swift */; };
+		162BA482194FA3E600632B9C /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6366194A69E900D91327 /* Letter.swift */; };
+		162BA483194FA3EA00632B9C /* Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6368194A69F600D91327 /* Letters.swift */; };
+		162BA484194FA3EF00632B9C /* WordString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E636C194A9D7200D91327 /* WordString.swift */; };
+		162BA485194FA3F800632B9C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5DA19487FD8001A576E /* GameScene.swift */; };
+		162BA486194FA3FC00632B9C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D5DC19487FD8001A576E /* GameViewController.swift */; };
+		162BA48A194FA4D400632B9C /* BoardLetterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BA489194FA4D400632B9C /* BoardLetterTests.swift */; };
 		165E6367194A69E900D91327 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6366194A69E900D91327 /* Letter.swift */; };
 		165E6369194A69F600D91327 /* Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E6368194A69F600D91327 /* Letters.swift */; };
 		165E636D194A9D7200D91327 /* WordString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E636C194A9D7200D91327 /* WordString.swift */; };
@@ -39,6 +46,7 @@
 /* Begin PBXFileReference section */
 		162BA47A194E6FD400632B9C /* BoardLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLetter.swift; sourceTree = "<group>"; };
 		162BA47D194E745500632B9C /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		162BA489194FA4D400632B9C /* BoardLetterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLetterTests.swift; sourceTree = "<group>"; };
 		165E63641949D01800D91327 /* LetterCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCreator.swift; sourceTree = "<group>"; };
 		165E6366194A69E900D91327 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		165E6368194A69F600D91327 /* Letters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letters.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 			children = (
 				16A3D5EB19487FD8001A576E /* Supporting Files */,
 				16A3D5FA194882C5001A576E /* DictionaryTests.swift */,
+				162BA489194FA4D400632B9C /* BoardLetterTests.swift */,
 			);
 			path = WordyYoshaTests;
 			sourceTree = "<group>";
@@ -243,9 +252,9 @@
 				16A3D5DB19487FD8001A576E /* GameScene.swift in Sources */,
 				16A3D5F81948817F001A576E /* Dictionary.swift in Sources */,
 				165E6369194A69F600D91327 /* Letters.swift in Sources */,
-				165E63651949D01800D91327 /* LetterCreator.swift in Sources */,
 				16A3D5DD19487FD8001A576E /* GameViewController.swift in Sources */,
 				162BA47E194E745500632B9C /* Point.swift in Sources */,
+				162BA480194FA3E200632B9C /* LetterCreator.swift in Sources */,
 				165E636D194A9D7200D91327 /* WordString.swift in Sources */,
 				162BA47B194E6FD400632B9C /* BoardLetter.swift in Sources */,
 				16A3D5D719487FD8001A576E /* AppDelegate.swift in Sources */,
@@ -256,9 +265,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162BA486194FA3FC00632B9C /* GameViewController.swift in Sources */,
 				162BA47F194E745500632B9C /* Point.swift in Sources */,
+				162BA481194FA3E300632B9C /* LetterCreator.swift in Sources */,
 				16A3D5F91948817F001A576E /* Dictionary.swift in Sources */,
+				162BA485194FA3F800632B9C /* GameScene.swift in Sources */,
+				162BA482194FA3E600632B9C /* Letter.swift in Sources */,
+				162BA48A194FA4D400632B9C /* BoardLetterTests.swift in Sources */,
 				162BA47C194E6FD400632B9C /* BoardLetter.swift in Sources */,
+				162BA483194FA3EA00632B9C /* Letters.swift in Sources */,
+				162BA484194FA3EF00632B9C /* WordString.swift in Sources */,
 				16A3D5FB194882C5001A576E /* DictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

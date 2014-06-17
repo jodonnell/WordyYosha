@@ -10,36 +10,43 @@ import Foundation
 import SpriteKit
 
 var id = 0
-let fontSize = 37
+
+let boxWidth = 36
+let boxHeight = 39
+let boxWidthWithPadding = boxWidth + 1
 let padding = 30
 
 class LetterCreator {
 
     class func create(point: Point) -> BoardLetter {
-        let label = self.createLetterSprite(self.randomLetter())
+        let label = self.createLetterSprite(self.randomLetter(), fontSize: 20)
 
-        let box = SKSpriteNode(color: SKColor.greenColor(), size: CGSizeMake(36, 39))
-        box.position = CGPoint(x: point.x * fontSize + padding, y: point.y * (fontSize + 3) + padding)
+        let box = SKSpriteNode(color: SKColor.greenColor(), size: self.boxSize())
+        box.position = CGPoint(x: point.x * boxWidthWithPadding + padding, y: point.y * (boxWidthWithPadding + 3) + padding)
         box.addChild(label)
         return BoardLetter(sprite: box, id: self.newId(), point: point)
     }
 
     class func createWordString(point: Point, letter: Letter) -> Letter {
-        let label = self.createLetterSprite(letter.letter)
+        let label = self.createLetterSprite(letter.letter, fontSize: 37)
         
-        let box = SKSpriteNode(color: SKColor.yellowColor(), size: CGSizeMake(36, 39))
-        box.position = CGPoint(x: point.x * fontSize + padding, y: point.y * (fontSize + 3) + padding)
+        let box = SKSpriteNode(color: SKColor.yellowColor(), size: self.boxSize())
+        box.position = CGPoint(x: point.x * boxWidthWithPadding + padding, y: point.y * (boxWidthWithPadding + 3) + padding)
         box.addChild(label)
         return Letter(sprite: box, id: letter.id)
     }
 
-    class func createLetterSprite(letter: String) -> SKLabelNode {
+    class func createLetterSprite(letter: String, fontSize: Int) -> SKLabelNode {
         let myLabel = SKLabelNode(fontNamed:"Al Nile")
         myLabel.text = letter
         myLabel.fontSize = CGFloat(fontSize)
         myLabel.fontColor = SKColor.blackColor()
         myLabel.position = CGPoint(x: 0, y: -15)
         return myLabel
+    }
+
+    class func boxSize() -> CGSize {
+        return CGSizeMake(CGFloat(boxWidth), CGFloat(boxHeight))
     }
     
     class func newId() -> Int {
