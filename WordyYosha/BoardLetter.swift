@@ -21,7 +21,7 @@ class BoardLetter: Letter {
     }
 
     func isPointIn(point: CGPoint) -> Bool {
-        let inset = 10.0
+        let inset = 9.0
         var frame = CGRectMake(self.sprite.frame.origin.x + inset, self.sprite.frame.origin.y + inset, self.sprite.frame.size.width - inset, self.sprite.frame.size.height - inset)
 
         return CGRectContainsPoint(frame, point)
